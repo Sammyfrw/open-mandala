@@ -1,0 +1,35 @@
+<h1>Trade Types</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Group</th>
+      <th>Symbol name</th>
+      <th>Description</th>
+      <th>Deposit description</th>
+      <th>Withdrawal description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trade_types.each do |trade_type| %>
+      <tr>
+        <td><%= trade_type.type_id %></td>
+        <td><%= trade_type.group %></td>
+        <td><%= trade_type.symbol_name %></td>
+        <td><%= trade_type.description %></td>
+        <td><%= trade_type.deposit_description %></td>
+        <td><%= trade_type.withdrawal_description %></td>
+        <td><%= link_to 'Show', trade_type %></td>
+        <td><%= link_to 'Edit', edit_trade_type_path(trade_type) %></td>
+        <td><%= link_to 'Destroy', trade_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trade type', new_trade_type_path %>

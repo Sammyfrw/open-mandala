@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102180621) do
+ActiveRecord::Schema.define(version: 20141114030713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tickers", force: true do |t|
+    t.integer  "ticker_type_id"
+    t.string   "ticker"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trade_types", force: true do |t|
+    t.integer  "type_id"
+    t.integer  "group"
+    t.string   "symbol_name"
+    t.string   "description"
+    t.string   "deposit_description"
+    t.string   "withdrawal_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "username"

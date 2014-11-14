@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :tickers
+
+  resources :trade_types
+
   root 'static_pages#home'
 
   resources :users

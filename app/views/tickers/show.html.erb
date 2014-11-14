@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ticker type:</strong>
+  <%= @ticker.ticker_type_id %>
+</p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @ticker.ticker %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ticker.name %>
+</p>
+
+<%= link_to 'Edit', edit_ticker_path(@ticker) %> |
+<%= link_to 'Back', tickers_path %>

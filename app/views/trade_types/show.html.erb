@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @trade_type.type_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @trade_type.group %>
+</p>
+
+<p>
+  <strong>Symbol name:</strong>
+  <%= @trade_type.symbol_name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @trade_type.description %>
+</p>
+
+<p>
+  <strong>Deposit description:</strong>
+  <%= @trade_type.deposit_description %>
+</p>
+
+<p>
+  <strong>Withdrawal description:</strong>
+  <%= @trade_type.withdrawal_description %>
+</p>
+
+<%= link_to 'Edit', edit_trade_type_path(@trade_type) %> |
+<%= link_to 'Back', trade_types_path %>
