@@ -1,0 +1,43 @@
+<%= form_for(@trade) do |f| %>
+  <% if @trade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
+
+      <ul>
+      <% @trade.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table class="table">
+  <tr>
+    <td><small><%= f.label :trade_date %></small></td>
+    <td><small><%= f.label :ticker_id %></small></td>
+    <td><small><%= f.label :trade_type_id %></small></td>
+    <td><small><%= f.label :price %></small></td>
+    <td><small><%= f.label :num_units %></small></td>
+    <td><small><%= f.label :commission %></small></td>
+    <td><small><%= f.label :reg_fee %></small></td>
+    <td><small><%= f.label :strike %></small></td>
+    <td><small><%= f.label :expiration %></small></td>
+    <td><small><%= f.label :description %></small></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><%= f.date_select :trade_date %></td>
+    <td><%= collection_select(:trade, :ticker_id, Ticker.all.order(ticker: :asc), :id, :ticker) %></td>
+    <td><%= collection_select(:trade, :trade_type_id, TradeType.all_cache, :type_id, :description) %></td>
+    <td><%= f.text_field :price %></td>
+    <td><%= f.text_field :num_units %></td>
+    <td><%= f.text_field :commission %></td>
+    <td><%= f.text_field :reg_fee %></td>
+    <td><%= f.text_field :strike %></td>
+    <td><%= f.date_select :expiration %></td>
+    <td><%= f.text_field :description %></td>
+    <td><%= f.submit %></td>
+  </tr>
+</table>
+
+<% end %>

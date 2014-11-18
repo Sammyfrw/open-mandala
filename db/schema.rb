@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114030713) do
+ActiveRecord::Schema.define(version: 20141118024918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,25 @@ ActiveRecord::Schema.define(version: 20141114030713) do
     t.string   "description"
     t.string   "deposit_description"
     t.string   "withdrawal_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trades", force: true do |t|
+    t.datetime "trade_date"
+    t.integer  "user_id"
+    t.integer  "ticker_id"
+    t.integer  "trade_type_id"
+    t.float    "num_units"
+    t.float    "price"
+    t.integer  "parent_id"
+    t.integer  "withdrawal_id"
+    t.integer  "deposit_id"
+    t.float    "commission"
+    t.float    "reg_fee"
+    t.float    "strike"
+    t.datetime "expiration"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
