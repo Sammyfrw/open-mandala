@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Trade date:</strong>
+  <%= @trade.trade_date %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @trade.user_id %>
+</p>
+
+<p>
+  <strong>Ticker:</strong>
+  <%= @trade.ticker_id %>
+</p>
+
+<p>
+  <strong>Trade type:</strong>
+  <%= @trade.trade_type_id %>
+</p>
+
+<p>
+  <strong>Num units:</strong>
+  <%= @trade.num_units %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @trade.price %>
+</p>
+
+<p>
+  <strong>Parent:</strong>
+  <%= @trade.parent_id %>
+</p>
+
+<p>
+  <strong>Withdrawal:</strong>
+  <%= @trade.withdrawal_id %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @trade.deposit_id %>
+</p>
+
+<p>
+  <strong>Commission:</strong>
+  <%= @trade.commission %>
+</p>
+
+<p>
+  <strong>Reg fee:</strong>
+  <%= @trade.reg_fee %>
+</p>
+
+<p>
+  <strong>Strike:</strong>
+  <%= @trade.strike %>
+</p>
+
+<p>
+  <strong>Expiration:</strong>
+  <%= @trade.expiration %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @trade.description %>
+</p>
+
+<%= link_to 'Edit', edit_trade_path(@trade) %> |
+<%= link_to 'Back', trades_path %>

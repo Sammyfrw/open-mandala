@@ -1,0 +1,51 @@
+<h1>Trades</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Trade date</th>
+      <th>User</th>
+      <th>Ticker</th>
+      <th>Trade type</th>
+      <th>Num units</th>
+      <th>Price</th>
+      <th>Parent</th>
+      <th>Withdrawal</th>
+      <th>Deposit</th>
+      <th>Commission</th>
+      <th>Reg fee</th>
+      <th>Strike</th>
+      <th>Expiration</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trades.each do |trade| %>
+      <tr>
+        <td><%= trade.trade_date %></td>
+        <td><%= trade.user_id %></td>
+        <td><%= trade.ticker_id %></td>
+        <td><%= trade.trade_type_id %></td>
+        <td><%= trade.num_units %></td>
+        <td><%= trade.price %></td>
+        <td><%= trade.parent_id %></td>
+        <td><%= trade.withdrawal_id %></td>
+        <td><%= trade.deposit_id %></td>
+        <td><%= trade.commission %></td>
+        <td><%= trade.reg_fee %></td>
+        <td><%= trade.strike %></td>
+        <td><%= trade.expiration %></td>
+        <td><%= trade.description %></td>
+        <td><%= link_to 'Show', trade %></td>
+        <td><%= link_to 'Edit', edit_trade_path(trade) %></td>
+        <td><%= link_to 'Destroy', trade, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trade', new_trade_path %>

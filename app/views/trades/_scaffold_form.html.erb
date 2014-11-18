@@ -1,0 +1,73 @@
+<%= form_for(@trade) do |f| %>
+  <% if @trade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@trade.errors.count, "error") %> prohibited this trade from being saved:</h2>
+
+      <ul>
+      <% @trade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :trade_date %><br>
+    <%= f.datetime_select :trade_date %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ticker_id %><br>
+    <%= f.number_field :ticker_id %>
+  </div>
+  <div class="field">
+    <%= f.label :trade_type_id %><br>
+    <%= f.number_field :trade_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :num_units %><br>
+    <%= f.text_field :num_units %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br>
+    <%= f.number_field :parent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :withdrawal_id %><br>
+    <%= f.number_field :withdrawal_id %>
+  </div>
+  <div class="field">
+    <%= f.label :deposit_id %><br>
+    <%= f.number_field :deposit_id %>
+  </div>
+  <div class="field">
+    <%= f.label :commission %><br>
+    <%= f.text_field :commission %>
+  </div>
+  <div class="field">
+    <%= f.label :reg_fee %><br>
+    <%= f.text_field :reg_fee %>
+  </div>
+  <div class="field">
+    <%= f.label :strike %><br>
+    <%= f.text_field :strike %>
+  </div>
+  <div class="field">
+    <%= f.label :expiration %><br>
+    <%= f.datetime_select :expiration %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
