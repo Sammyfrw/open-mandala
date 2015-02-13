@@ -26,16 +26,17 @@
     <td></td>
   </tr>
   <tr>
-    <td><%= f.date_select :trade_date %></td>
-    <td><%= collection_select(:trade, :trade_type_id, TradeType.all_cache, :type_id, :description) %></td>
-    <td><%= collection_select(:trade, :ticker_id, Ticker.all.order(ticker: :asc), :id, :ticker) %></td>
-    <td><%= f.text_field :price %></td>
-    <td><%= f.text_field :num_units %></td>
-    <td><%= f.text_field :commission %></td>
-    <td><%= f.text_field :reg_fee %></td>
-    <td><%= f.text_field :strike %></td>
-    <td><%= f.date_select :expiration %></td>
-    <td><%= f.text_field :description %></td>
+    <td><%= f.date_select :trade_date, {id: 'trade_date_select'} %></td>
+    <td><%= collection_select(:trade, :trade_type_id, TradeType.all_cache, :type_id, :description, {}, {id: 'trade_types_select'}) %></td>
+    <td><%= collection_select(:trade, :ticker_id, Ticker.all.order(ticker: :asc), :id, :ticker, {}, {id: 'trade_ticker_select', class: 'hidden'}) %></td>
+    <td><%= f.text_field :price, id: 'price_field', class: 'hidden' %></td>
+    <td><%= f.text_field :num_units, id: 'num_units_field', class: 'hidden' %></td>
+    <td><%= f.text_field :commission, id: 'comission_field', class: 'hidden' %></td>
+    <td><%= f.text_field :reg_fee, id: 'reg_fee_field', class: 'hidden' %></td>
+    <td><%= f.text_field :strike, id: 'strike_field', class: 'hidden' %></td>
+    <td><%= f.date_select :expiration, {id: 'expiration_field'}, {class: 'hidden'} %></td>
+    <td><%= f.text_field :description, id: 'description_field', class: 'hidden' %></td>
+    </div>
     <td><%= f.submit %></td>
   </tr>
 </table>
