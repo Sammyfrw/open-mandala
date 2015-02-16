@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "trades/update_trade_form", as: "update_trade_form"
   resources :trades
 
   resources :tickers

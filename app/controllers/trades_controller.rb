@@ -61,10 +61,21 @@ class TradesController < ApplicationController
     end
   end
 
+
   private
+    def update_trade_form
+      # @birth_regions = Region.where("country_id = ?", params[:birthplace_id])
+      respond_to do |format|
+        format.js
+      end
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_trade
       @trade = Trade.find(params[:id])
+      respond_to do |format|
+        format.js
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

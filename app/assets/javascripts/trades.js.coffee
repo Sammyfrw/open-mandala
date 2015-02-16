@@ -4,7 +4,7 @@
 
 
 $ ->
-  $(document).on 'change', '#trade_type_select', (evt) ->
+  $(document).on 'change', '#trade_types_select', (evt) ->
     $.ajax 'update_trade_form',
       type: 'GET'
       dataType: 'script'
@@ -15,3 +15,4 @@ $ ->
         console.log("AJAX error: #{textStatus}")
       success: (data, textStatus, jqXHR) ->
         console.log("Dynamic Trade Select OK!")
+        console.log(data)
