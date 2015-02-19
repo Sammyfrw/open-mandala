@@ -64,10 +64,8 @@ class TradesController < ApplicationController
 
   private
     def update_trade_form
-      # @birth_regions = Region.where("country_id = ?", params[:birthplace_id])
-      respond_to do |format|
-        format.js
-      end
+      @trade_type = TradeType.where("trade_type_id = ?", params[:trade_type_id])
+      respond_to :js
     end
 
     # Use callbacks to share common setup or constraints between actions.
